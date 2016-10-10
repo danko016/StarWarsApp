@@ -41,8 +41,6 @@ constructor(val context: Context, val peopleList: MutableList<Person>) : Recycle
         } else{
             Glide.with(context).load(R.drawable.no_image10).into(holder.firstImage)
         }
-//        Glide.with(context).load(url).into(holder?.typeImage)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MyViewHolder {
