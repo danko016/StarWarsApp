@@ -29,7 +29,7 @@ constructor(val context: Context, val planetsList: MutableList<Planet>) : Recycl
         holder?.firstTextView?.text = movies.name
         holder?.secondTextView?.text = movies.diameter
 
-        if (holder?.firstTextView?.text == "Alderaan") {
+        if (holder?.firstTextView?.text?.contains("Alderaan")!!) {
             Glide.with(context).load(R.drawable.alderan).centerCrop().into(holder?.imagePlanets)
         } else if (holder?.firstTextView?.text?.contains("Yavin")!!) {
             Glide.with(context).load(R.drawable.yavin).centerCrop().into(holder?.imagePlanets)
