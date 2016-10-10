@@ -33,11 +33,11 @@ constructor(val context: Context, val planetsList: MutableList<Planet>) : Recycl
             Glide.with(context).load(R.drawable.alderan).centerCrop().into(holder?.imagePlanets)
         } else if (holder?.firstTextView?.text?.contains("Yavin")!!) {
             Glide.with(context).load(R.drawable.yavin).centerCrop().into(holder?.imagePlanets)
-        }else if (holder?.firstTextView?.text == "Dagobah") {
+        } else if (holder?.firstTextView?.text == "Dagobah") {
             Glide.with(context).load(R.drawable.dagobah).into(holder?.imagePlanets)
-        }else if (holder?.firstTextView?.text == "Bespin") {
-            Glide.with(context).load(R.drawable.bespin).override(70,70).into(holder?.imagePlanets)
-        } else{
+        } else if (holder?.firstTextView?.text == "Bespin") {
+            Glide.with(context).load(R.drawable.bespin).override(70, 70).into(holder?.imagePlanets)
+        } else {
             Glide.with(context).load(R.drawable.no_image10).into(holder?.imagePlanets)
         }
     }
@@ -46,11 +46,13 @@ constructor(val context: Context, val planetsList: MutableList<Planet>) : Recycl
         return planetsList.size
     }
 
-     class MoviesViewHolder (view: View): RecyclerView.ViewHolder(view) {
+    class MoviesViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         var firstTextView: TextView
         var secondTextView: TextView
-         var imagePlanets: ImageView
+        var imagePlanets: ImageView
+
+
 
         init {
             firstTextView = view.findViewById(R.id.TVplanetsFirst) as TextView
