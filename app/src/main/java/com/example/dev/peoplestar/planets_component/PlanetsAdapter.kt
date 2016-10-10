@@ -52,8 +52,6 @@ constructor(val context: Context, val planetsList: MutableList<Planet>) : Recycl
         var secondTextView: TextView
         var imagePlanets: ImageView
 
-
-
         init {
             firstTextView = view.findViewById(R.id.TVplanetsFirst) as TextView
             secondTextView = view.findViewById(R.id.TVplanetsSecond) as TextView
