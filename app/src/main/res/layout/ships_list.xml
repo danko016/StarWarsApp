@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="10sp"
+    android:layout_marginLeft="10sp"
+    android:layout_marginRight="10sp"
+    android:layout_marginStart="10sp"
+    android:background="@color/dark_gray"
+    android:orientation="vertical"
+    android:paddingTop="5sp">
+
+    <LinearLayout
+        android:id="@+id/LLHorizontalShips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginStart="5dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/LLLeftShips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/TVNameShips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif-monospace"
+                android:textStyle="bold"
+                android:textColor="@color/white_gray"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/TVSecondOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif-monospace"
+                android:textColor="@color/white_gray"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:id="@+id/TVThirdOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif-monospace"
+                android:textColor="@color/white_gray"
+                android:textSize="13sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LLRightShips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/IVFirstImageShips"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="end"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#7e7c7c" />
+
+
+</LinearLayout>
