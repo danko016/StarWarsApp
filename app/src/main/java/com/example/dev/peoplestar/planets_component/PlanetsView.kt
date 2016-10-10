@@ -10,6 +10,11 @@ interface PlanetsView: MvpLceView<Planets>{
 
     fun loadDefaultState()
 
+
+
+
+
+
     fun addData(data: Planets)
 
 }
