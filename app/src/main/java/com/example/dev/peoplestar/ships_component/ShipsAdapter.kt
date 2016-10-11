@@ -23,13 +23,8 @@ constructor(val context: Context, val shipsList: MutableList<Ship>) : RecyclerVi
 
     override fun onBindViewHolder(holder: ShipsViewHolder?, position: Int) {
         val ships = shipsList[position]
-//        if(ships.name?.length!! < 25) {
-//            holder?.firstText?.text = ships.name
-//        } else{
-//            holder?.firstText?.text = "Too long name"
-//        }
         holder?.firstText?.text = ships.name
-        holder?.secondText?.text = ships.cargoCapacity
+        holder?.secondText?.text = ships.cargoCapacity + " kg"
         holder?.thirdText?.text = ships.crew
 
         when (holder?.firstText?.text) {

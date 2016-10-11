@@ -17,17 +17,17 @@ import javax.inject.Inject
  */
 class PlanetsAdapter
 @Inject
-constructor(val context: Context, val planetsList: MutableList<Planet>) : RecyclerView.Adapter<PlanetsAdapter.MoviesViewHolder>() {
+constructor(val context: Context, val planetsList: MutableList<Planet>) : RecyclerView.Adapter<PlanetsAdapter.PlanetsViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): PlanetsAdapter.MoviesViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): PlanetsAdapter.PlanetsViewHolder {
         val itemView = LayoutInflater.from(parent?.context).inflate(R.layout.planets_list, parent, false)
-        return MoviesViewHolder(itemView)
+        return PlanetsViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: PlanetsAdapter.MoviesViewHolder?, position: Int) {
-        val movies = planetsList[position]
-        holder?.firstTextView?.text = movies.name
-        holder?.secondTextView?.text = movies.diameter
+    override fun onBindViewHolder(holder: PlanetsAdapter.PlanetsViewHolder?, position: Int) {
+        val planets = planetsList[position]
+        holder?.firstTextView?.text = planets.name
+        holder?.secondTextView?.text = planets.climate
 
         if (holder?.firstTextView?.text?.contains("Alderaan")!!) {
             Glide.with(context).load(R.drawable.alderan).centerCrop().into(holder?.imagePlanets)
@@ -46,7 +46,7 @@ constructor(val context: Context, val planetsList: MutableList<Planet>) : Recycl
         return planetsList.size
     }
 
-    class MoviesViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class PlanetsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         var firstTextView: TextView
         var secondTextView: TextView

@@ -27,18 +27,18 @@ constructor(val context: Context, val peopleList: MutableList<Person>) : Recycle
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val people = peopleList[position]
         holder.tvName.text = people.name
-        holder.tvYear.text = people.created
-        holder.tvUrl.text = people.url.substringBeforeLast("/").substringAfterLast("/")
+        holder.tvYear.text = people.gender
+        holder.tvUrl.text = "#" + people.url.substringBeforeLast("/").substringAfterLast("/")
 
         if (holder.tvName.text == "Luke Skywalker") {
             Glide.with(context).load(R.drawable.luke).centerCrop().into(holder.firstImage)
         } else if (holder.tvName.text.contains("C-3PO")) {
             Glide.with(context).load(R.drawable.c3).centerCrop().into(holder.firstImage)
-        }else if (holder.tvName.text == "R2-D2") {
+        } else if (holder.tvName.text == "R2-D2") {
             Glide.with(context).load(R.drawable.r2d21).into(holder.firstImage)
-        }else if (holder.tvName.text == "Darth Vader") {
-            Glide.with(context).load(R.drawable.darth_vader2).override(70,70).into(holder.firstImage)
-        } else{
+        } else if (holder.tvName.text == "Darth Vader") {
+            Glide.with(context).load(R.drawable.darth_vader2).override(70, 70).into(holder.firstImage)
+        } else {
             Glide.with(context).load(R.drawable.no_image10).into(holder.firstImage)
         }
     }
