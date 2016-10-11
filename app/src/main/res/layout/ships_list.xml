@@ -10,30 +10,31 @@
     android:orientation="vertical"
     android:paddingTop="5sp">
 
-    <LinearLayout
-        android:id="@+id/LLHorizontalShips"
+    <RelativeLayout
+        android:id="@+id/RLHorizontalShips"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:layout_marginStart="5dp"
-        android:orientation="horizontal">
+        android:layout_marginStart="5dp">
 
         <LinearLayout
             android:id="@+id/LLLeftShips"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/LLRightShips"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/TVNameShips"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="serif-monospace"
-                android:textStyle="bold"
                 android:textColor="@color/white_gray"
-                android:textSize="16sp"/>
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TVSecondOption"
@@ -41,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="serif-monospace"
                 android:textColor="@color/white_gray"
-                android:textSize="13sp"/>
+                android:textSize="13sp" />
 
             <TextView
                 android:id="@+id/TVThirdOption"
@@ -49,24 +50,25 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="serif-monospace"
                 android:textColor="@color/white_gray"
-                android:textSize="13sp"/>
+                android:textSize="13sp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/LLRightShips"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/IVFirstImageShips"
                 android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_gravity="end"/>
+                android:layout_height="70dp" />
         </LinearLayout>
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
