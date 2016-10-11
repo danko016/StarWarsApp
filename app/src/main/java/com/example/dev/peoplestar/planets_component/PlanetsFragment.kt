@@ -42,7 +42,7 @@ class PlanetsFragment : MvpLceFragment<SwipeRefreshLayout, Planets, PlanetsView,
     }
 
     override fun setData(data: Planets) {
-        loadMore(layoutManager!!)
+        loadMore()
         adapter?.planetsList?.clear()
         addData(data)
     }
@@ -78,10 +78,10 @@ class PlanetsFragment : MvpLceFragment<SwipeRefreshLayout, Planets, PlanetsView,
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter.defaultView()
-        loadData(false)
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = adapter
         contentView.setOnRefreshListener(this)
+        loadData(false)
     }
 
     override fun showContent() {
@@ -102,8 +102,8 @@ class PlanetsFragment : MvpLceFragment<SwipeRefreshLayout, Planets, PlanetsView,
         errorView.visibility = View.GONE
     }
 
-    fun loadMore(layout: LinearLayoutManager) {
-        recyclerView.addOnScrollListener(object : EndlessRecyclerViewScrollListener(layout) {
+    fun loadMore() {
+        recyclerView.addOnScrollListener(object : EndlessRecyclerViewScrollListener(layoutManager) {
             override fun onLoadMore(page: Int, totalItemsCount: Int) {
                 presenter.loadMoreData()
                 Log.d("tag", "onLoadMore planets")

@@ -8,12 +8,12 @@ import com.example.dev.peoplestar.modules.DataModule
 import com.example.dev.peoplestar.modules.FragmentModule
 import com.hannesdorfmann.mosby.mvp.MvpActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import org.greenrobot.eventbus.EventBus
 import javax.inject.Inject
 
 class MainActivity
 @Inject
 constructor() : MvpActivity<MainActivityView, MainActivityPresenter>(), MainActivityView {
+
 
     lateinit var component: MainActivityComponent
     var adapter: ViewPagerAdapter? = null
@@ -32,6 +32,7 @@ constructor() : MvpActivity<MainActivityView, MainActivityPresenter>(), MainActi
                 .build()
     }
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         injectDependencies()
         super.onCreate(savedInstanceState)
@@ -40,13 +41,10 @@ constructor() : MvpActivity<MainActivityView, MainActivityPresenter>(), MainActi
         adapter = component.adapter()
         vpPager.adapter = adapter
         tlTabs.setupWithViewPager(vpPager)
-
-        EventBus.getDefault().register(this)
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        EventBus.getDefault().unregister(this)
     }
 
 }

@@ -23,7 +23,6 @@ class PeopleFragment() : MvpLceFragment<SwipeRefreshLayout, People, PeopleView, 
 
     lateinit var component: PeopleComponent
     var adapter: PeopleAdapter? = null
-//    var layoutManager = LinearLayoutManager(context)
     var layoutManager : LinearLayoutManager? = null
 
     override fun loadDefaultState() {
