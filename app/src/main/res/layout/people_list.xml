@@ -11,7 +11,7 @@
     android:paddingTop="5sp">
 
     <RelativeLayout
-        android:id="@+id/RLhorizontal"
+        android:id="@+id/RLHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
@@ -24,34 +24,86 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_toLeftOf="@+id/LLRightPeople"
+            android:layout_toStartOf="@+id/LLRightPeople"
             android:orientation="vertical">
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tvName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="serif-monospace"
-                android:textColor="@color/white_gray"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                <LinearLayout
+                    android:id="@+id/LLInitTextPeople"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvYear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="serif-monospace"
-                android:textColor="@color/white_gray"
-                android:textSize="13sp" />
+                    <TextView
+                        android:id="@+id/TVInitName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif-monospace"
+                        android:text="Name: "
+                        android:textColor="@color/white_gray"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tvUrl"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="serif-monospace"
-                android:textColor="@color/white_gray"
-                android:textSize="13sp" />
+                    <TextView
+                        android:id="@+id/TVInitHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif-monospace"
+                        android:text="Gender: "
+                        android:textColor="@color/white_gray"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/TVInitId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif-monospace"
+                        android:text="Id: "
+                        android:textColor="@color/white_gray"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/LLApiTextPeople"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/LLInitTextPeople"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif-monospace"
+                        android:textColor="@color/white_gray"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvYear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif-monospace"
+                        android:textColor="@color/white_gray"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tvUrl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif-monospace"
+                        android:textColor="@color/white_gray"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
 
         </LinearLayout>
 

@@ -24,33 +24,84 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_toLeftOf="@+id/LLRightShips"
+            android:layout_toStartOf="@+id/LLRightShips"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/TVNameShips"
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="serif-monospace"
-                android:textColor="@color/white_gray"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/TVSecondOption"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="serif-monospace"
-                android:textColor="@color/white_gray"
-                android:textSize="13sp" />
+                <LinearLayout
+                    android:id="@+id/LLInitTextShips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/TVThirdOption"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="serif-monospace"
-                android:textColor="@color/white_gray"
-                android:textSize="13sp" />
+                    <TextView
+                        android:id="@+id/TVNameShipsInit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif-monospace"
+                        android:text="Name: "
+                        android:textColor="@color/white_gray"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/TVSecondOptionInit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif-monospace"
+                        android:text="CargoCapacity: "
+                        android:textColor="@color/white_gray"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/TVThirdOptionInit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif-monospace"
+                        android:text="Crew number: "
+                        android:textColor="@color/white_gray"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/LLInitTextShips"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/TVNameShips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif-monospace"
+                        android:textColor="@color/white_gray"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/TVSecondOption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif-monospace"
+                        android:textColor="@color/white_gray"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/TVThirdOption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif-monospace"
+                        android:textColor="@color/white_gray"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
 
         </LinearLayout>
 
@@ -58,8 +109,8 @@
             android:id="@+id/LLRightShips"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:orientation="vertical">
 
             <ImageView
