@@ -11,6 +11,7 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.example.dev.peoplestar.R
 import com.example.dev.peoplestar.model.Person
+import org.greenrobot.eventbus.EventBus
 import javax.inject.Inject
 
 /**
@@ -49,8 +50,11 @@ constructor(val context: Context, val peopleList: MutableList<Person>) : Recycle
         return MyViewHolder(itemView)
     }
 
-    class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class MyViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
 
+        override fun onClick(v: View?) {
+            EventBus.getDefault().post(Event(adapterPosition))
+        }
 
         var tvName: TextView
         var tvYear: TextView
@@ -63,7 +67,12 @@ constructor(val context: Context, val peopleList: MutableList<Person>) : Recycle
             tvYear = view.findViewById(R.id.tvYear) as TextView
             tvUrl = view.findViewById(R.id.tvUrl) as TextView
             firstImage = view.findViewById(R.id.IVfirstImage) as ImageView
+            itemView.setOnClickListener(this)
         }
+    }
+
+    class Event(val position: Int){
+
     }
 }
 

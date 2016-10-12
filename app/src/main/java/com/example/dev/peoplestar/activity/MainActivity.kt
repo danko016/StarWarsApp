@@ -19,8 +19,6 @@ constructor() : MvpActivity<MainActivityView, MainActivityPresenter>(), MainActi
     var adapter: ViewPagerAdapter? = null
 
     override fun createPresenter(): MainActivityPresenter {
-
-        Log.d("tag", "create presenter activity")
         return component.presenter()
     }
 
@@ -31,7 +29,6 @@ constructor() : MvpActivity<MainActivityView, MainActivityPresenter>(), MainActi
                 .fragmentModule(FragmentModule(supportFragmentManager))
                 .build()
     }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         injectDependencies()

@@ -18,11 +18,6 @@ constructor(fragmentManager: FragmentManager, val listFragment: MutableList<Frag
 
     override fun getItem(position: Int): Fragment {
         return listFragment[position]
-//        if (position == 0)
-//            return PeopleFragment()
-//
-//        return PersonFragment()
-
     }
 
     override fun getCount(): Int {

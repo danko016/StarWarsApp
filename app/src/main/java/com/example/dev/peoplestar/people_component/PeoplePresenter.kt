@@ -1,6 +1,8 @@
 package com.example.dev.peoplestar.people_component
 
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 import javax.inject.Inject
@@ -16,6 +18,10 @@ constructor() : MvpBasePresenter<PeopleView>() {
     val peopleInteractor = PeopleInteractor()
     var nextPage: Int = 0
 
+    @Subscribe
+    fun onEvent(event: PeopleAdapter.Event){
+        view?.openPersonActivity(event.position)
+    }
 
     fun loadPeople(pullToRefresh: Boolean) {
         peopleInteractor.getPeopleAsyncMethod()
@@ -47,14 +53,17 @@ constructor() : MvpBasePresenter<PeopleView>() {
 
     override fun attachView(view: PeopleView?) {
         super.attachView(view)
-
+        EventBus.getDefault().register(this)
     }
 
     override fun detachView(retainInstance: Boolean) {
         super.detachView(retainInstance)
+        EventBus.getDefault().unregister(this)
     }
 
     fun defaultView() {
         view?.loadDefaultState()
     }
 }
+
+

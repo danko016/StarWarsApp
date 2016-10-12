@@ -2,12 +2,13 @@ package com.example.dev.peoplestar.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 import java.util.*
 import javax.annotation.Generated
 
 
 @Generated("org.jsonschema2pojo")
-class Person() {
+class Person() : Serializable {
     /**
      *
      * @return
@@ -216,4 +217,10 @@ class Person() {
     @SerializedName("url")
     @Expose
     var url:String = ""
+
+    override fun toString(): String {
+        return "Person(name='$name', height='$height', mass='$mass', hairColor='$hairColor', skinColor='$skinColor', eyeColor='$eyeColor', birthYear='$birthYear', gender='$gender', homeworld='$homeworld', films=$films, species=$species, vehicles=$vehicles, starships=$starships, created='$created', edited='$edited', url='$url')"
+    }
+
+
 }

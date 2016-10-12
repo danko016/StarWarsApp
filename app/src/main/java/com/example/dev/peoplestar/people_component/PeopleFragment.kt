@@ -1,5 +1,6 @@
 package com.example.dev.peoplestar.people_component
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
@@ -12,6 +13,7 @@ import com.example.dev.peoplestar.model.People
 import com.example.dev.peoplestar.modules.AppModule
 import com.example.dev.peoplestar.modules.DataModule
 import com.example.dev.peoplestar.modules.LayoutModule
+import com.example.dev.peoplestar.person_component.PersonActivity
 import com.hannesdorfmann.mosby.mvp.lce.MvpLceFragment
 import kotlinx.android.synthetic.main.people_layout.*
 
@@ -20,6 +22,8 @@ import kotlinx.android.synthetic.main.people_layout.*
  */
 
 class PeopleFragment() : MvpLceFragment<SwipeRefreshLayout, People, PeopleView, PeoplePresenter>(), PeopleView, SwipeRefreshLayout.OnRefreshListener {
+
+
 
     lateinit var component: PeopleComponent
     var adapter: PeopleAdapter? = null
@@ -45,11 +49,17 @@ class PeopleFragment() : MvpLceFragment<SwipeRefreshLayout, People, PeopleView, 
         loadMore(layoutManager!!)
         adapter?.peopleList?.clear()
         addData(data)
-
     }
 
     override fun addData(data: People) {
         adapter?.peopleList?.addAll(data.getPeopleResult()!!)
+    }
+
+    override fun openPersonActivity(position: Int) {
+        val person = adapter?.peopleList!![position]
+        val intent: Intent = Intent(context, PersonActivity::class.java)
+        intent.putExtra("person", person)
+        context.startActivity(intent)
     }
 
     override fun onRefresh() {
@@ -120,5 +130,6 @@ class PeopleFragment() : MvpLceFragment<SwipeRefreshLayout, People, PeopleView, 
 
 
 }
+
 
 

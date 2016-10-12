@@ -16,4 +16,6 @@ interface PeopleView : MvpView, MvpLceView<People> {
 
     fun addData(data: People)
 
+    fun openPersonActivity(position: Int)
+
 }
